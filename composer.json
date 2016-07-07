@@ -1,0 +1,32 @@
+{
+    "name": "abhishekkhaware/mvc",
+    "description": "This is micro MVC framework.",
+    "keywords": ["framework", "MVC"],
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abhishek Khaware",
+            "email": "abhishekkhaware@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "libs","include"
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": ["app/helpers.php"]
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.2",
+        "symfony/var-dumper": "^3.1",
+        "illuminate/database": "^5.2",
+        "illuminate/pagination": "^5.2",
+        "illuminate/mail": "^5.2",
+        "mailgun/mailgun-php": "^2.0",
+        "filp/whoops": "^2.1",
+        "symfony/finder": "^3.1"
+    }
+}
