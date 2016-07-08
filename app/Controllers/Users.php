@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use Libs\Auth;
 use Libs\BaseController;
 use Libs\Session;
 

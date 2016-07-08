@@ -2,7 +2,7 @@
 <html lang="en" ng-app>
 <head>
     <meta charset="utf-8">
-    <title>Bank - Aapka Apna Bank</title>
+    <title>WOW Bank - Aapka Apna Bank</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="<?php echo URL; ?>public/images/favicon.png" />
 <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>public/css/bootstrap.min.css"/>
@@ -46,9 +46,9 @@
     <?php if(hasErrors()):?>
         <div class="alert alert-danger text-center alert-dismissable">
         <i class="close" data-dismiss="alert">x</i>
-        <h4><?php foreach($_SESSION['errors'] as $key=> $error): ?>
+        <h4><?php if(is_array($_SESSION['errors'])){ foreach($_SESSION['errors'] as $key=> $error): ?>
             <i><strong><?=ucwords(str_replace('_',' ',$key))."</strong>, ".$error ?></i><br/>
-            <?php endforeach; ?>
+            <?php endforeach; }else{ echo $_SESSION['errors']; } ?>
         <?php \Libs\Session::remove('errors'); ?></h4>
     </div>
     <?php endif; ?>
