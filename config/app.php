@@ -2,7 +2,7 @@
 /**
  * Used For url Definition
  */
-define('URL', 'http://localhost/bank/');
+define('URL', 'http://localhost/mvc/');
 /**
  * Using for security. Hashing Password, Like.
  */

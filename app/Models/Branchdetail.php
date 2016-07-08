@@ -23,7 +23,7 @@ class Branchdetail extends BaseModel
     }
     public function branchList($limit=10,$offset=0,array $param=array('sort'=>'id','direction'=>'asc'))
     {
-        return Branchdetail::all(array('limit'=>$limit,'offset'=>$offset,'order'=>"{$param['sort']} {$param['direction']}",'include' => array('issues')));
+        return Branchdetail::all();
     }
     public function totalSearch($data){
         return (int)count(Branchdetail::all(array('conditions'=>"{$data['searchBy']} LIKE '%{$data['search_query']}%'")));

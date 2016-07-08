@@ -13,7 +13,7 @@ class BaseController
         $file=__MODELS__.ucfirst($name).'.php';
         if (file_exists($file)) {
 //            require $file;
-            $modelName=ucwords($name);
+            $modelName="\\App\\Models\\".ucwords($name);
             $this->model=new $modelName();
 		}
 	}

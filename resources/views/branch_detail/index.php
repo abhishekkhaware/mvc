@@ -43,7 +43,7 @@
     <?php foreach($this->details as $detail): ?>
         <tr>
             <td><?= $detail->id ?> </td>
-            <td><?= $detail->branch_name ?> <?= (array_filter($detail->issues,function($dt){return !$dt->status;}))? "<a href=".URL.'branchdetail/show/'.$detail->id." <sup class='label label-danger'>".count(array_filter($detail->issues,function($dt){return !$dt->status;}))."</sup>" : ''; ?> </td>
+            <td><?= $detail->branch_name ?> <?php if ($detail->issues){ ?><?= (array_filter($detail->issues,function($dt){return !$dt->status;}))? "<a href=".URL.'branchdetail/show/'.$detail->id." <sup class='label label-danger'>".count(array_filter($detail->issues,function($dt){return !$dt->status;}))."</sup>" : ''; } ?> </td>
             <td><?= $detail->branch_manager ?> </td>
             <td><?= $detail->location ?> </td>
             <td><a href="#model-<?=$detail->id; ?>"  role="link" class="btn" data-toggle="modal"><?= $detail->email ?></a>
